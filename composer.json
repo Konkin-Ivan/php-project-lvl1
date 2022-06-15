@@ -1,0 +1,20 @@
+{
+    "name": "hexlet/code",
+    "description": "Game 1",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "konkin",
+            "email": "ivan.konkin.adci@gmail.com"
+        }
+    ],
+    "bin": [
+			"bin/brain-games"
+		],
+    "require": {}
+}

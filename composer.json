@@ -16,5 +16,15 @@
     "bin": [
 			"bin/brain-games"
 		],
-    "require": {}
+		"autoload": {
+        "psr-0": {
+            "cli": "wp-cli/php-cli-tools/lib/"
+        },
+        "files": [
+            "wp-cli/php-cli-tools/lib/cli/cli.php"
+        ]
+    },
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.13"
+    }
 }

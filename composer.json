@@ -1,11 +1,16 @@
 {
     "name": "hexlet/code",
-    "description": "Game 1",
+    "description": "hexlet php-package",
     "type": "project",
+    "require-dev": {
+        "wp-cli/php-cli-tools": "dev-master"
+    },
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
-        }
+        },
+        "files": [ "src/Cli.php" ]
     },
     "authors": [
         {
@@ -14,17 +19,8 @@
         }
     ],
     "bin": [
-			"bin/brain-games"
-		],
-		"autoload": {
-        "psr-0": {
-            "cli": "wp-cli/php-cli-tools/lib/"
-        },
-        "files": [
-            "wp-cli/php-cli-tools/lib/cli/cli.php"
-        ]
-    },
-    "require": {
-        "wp-cli/php-cli-tools": "^0.11.13"
-    }
+      "bin/brain-games"
+    ],
+    "minimum-stability": "dev",
+    "require": {}
 }

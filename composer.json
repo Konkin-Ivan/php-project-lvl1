@@ -3,7 +3,8 @@
     "description": "hexlet php-package",
     "type": "project",
     "require-dev": {
-        "wp-cli/php-cli-tools": "dev-master"
+        "wp-cli/php-cli-tools": "dev-master",
+        "squizlabs/php_codesniffer": "dev-master"
     },
     "license": "MIT",
     "autoload": {

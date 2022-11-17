@@ -12,6 +12,7 @@ function parityCheck()
     $name = prompt('May I have your name?');
     line("Hello, {$name}!");
     line('Answer "yes" if the number is even, otherwise answer "no".');
+    $result = '';
     for ($i = 0; $i < 3; $i++) {
         $num = rand(0, 100);
         $question = prompt("Question: {$num}");
@@ -31,6 +32,7 @@ function parityCheck()
             case (true && $question === $yes || false && $question === $no):
                 print_r($right);
                 print_r("\n");
+                $result = "Congratulations, {$name}!";
                 break;
             case (true && $question === $no || false && $question = $yes):
                 print_r($wrong);
@@ -40,5 +42,5 @@ function parityCheck()
                 return;
         }
     }
-
+    print_r($result);
 }

@@ -19,18 +19,17 @@ function parityCheck()
     for ($i = 0; $i < 3; $i++) {
         $num = rand(START_RANGE, END_RANGE);
         $question = prompt("Question: {$num}");
-        if ($question !== 'yes' || $question !== 'no') {
-            print_r("is wrong answer ;(");
-            print_r("\n");
-            print_r(TRY_AGAIN);
-            print_r("\n");
-            return;
-        }
         line('Your answer: %s', $question);
         $yes = "Correct!";
         $no = "'yes' is wrong answer ;(. Correct answer was 'no'.";
         $expression = $num % 2 === 0;
         switch ($expression) {
+            case ($question !== 'yes' || $question !== 'no'):
+                print_r("is wrong answer ;(");
+                print_r("\n");
+                print_r(TRY_AGAIN);
+                print_r("\n");
+                return;
             case ($expression === TRUE_VALUE && $question === 'yes'):
                 print_r($yes);
                 print_r("\n");

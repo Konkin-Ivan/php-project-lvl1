@@ -4,55 +4,41 @@ namespace BrainGames\Even;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Cli\welcomeUser;
 
-const START_RANGE = 0;
-const END_RANGE = 100;
-const GAME_INIT = 'Answer "yes" if the number is even, otherwise answer "no".';
-const TRUE_VALUE = true;
-const FALSE_VALUE = false;
-const CONGRATULATION = "Congratulations, Bill!";
-const TRY_AGAIN = "Let's try again, Bill!";
 function parityCheck()
 {
-    line(GAME_INIT);
-    $result = '';
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, {$name}!");
+    line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($i = 0; $i < 3; $i++) {
-        $num = rand(START_RANGE, END_RANGE);
+        $num = rand(0, 100);
         $question = prompt("Question: {$num}");
-        line('Your answer: %s', $question);
-        $yes = "Correct!";
-        $no = "'yes' is wrong answer ;(. Correct answer was 'no'.";
+        if ($question !== 'yes' && $question !== 'no') {
+            print_r("is wrong answer ;(.\n Let's try again, {$name}!");
+            print_r("\n");
+            return;
+        }
+        line("Your answer: {$question}");
+        $right = 'Correct!';
+        $yes = 'yes';
+        $no = 'no';
         $expression = $num % 2 === 0;
+        $correct = $expression ? $yes : $no;
+        $wrong = "'{$question}' is wrong answer ;(. Correct answer was '{$correct}'.\n Let's try again, {$name}!";
         switch ($expression) {
-            case ($question !== 'yes' || $question !== 'no'):
-                print_r("is wrong answer ;(");
+            case (true && $question === $yes || false && $question === $no):
+                print_r($right);
                 print_r("\n");
-                print_r(TRY_AGAIN);
+                break;
+            case (true && $question === $no || false && $question = $yes):
+                print_r($wrong);
                 print_r("\n");
                 return;
-            case ($expression === TRUE_VALUE && $question === 'yes'):
-                print_r($yes);
-                print_r("\n");
-                $result = CONGRATULATION;
-                break;
-            case ($expression === FALSE_VALUE && $question === 'no'):
-                print_r($yes);
-                print_r("\n");
-                $result = CONGRATULATION;
-                break;
-            case ($expression === FALSE_VALUE && $question === 'yes'):
-                print_r($no);
-                print_r("\n");
-                print_r(TRY_AGAIN);
-                print_r("\n");
-                return;
-            case ($expression === TRUE_VALUE && $question === 'no'):
-                print_r("'no' is wrong answer ;(. Correct answer was 'yes'. ");
-                print_r("\n");
-                print_r(TRY_AGAIN);
-                print_r("\n");
+            default:
                 return;
         }
     }
-    return $result;
+
 }

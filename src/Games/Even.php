@@ -10,7 +10,7 @@ const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 const MIN_VALUE = 1;
 const MAX_VALUE = 99;
 
-function parityCheck()
+function startGame(): void
 {
     $gameData = function()
     {

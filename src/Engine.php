@@ -14,11 +14,13 @@ function run(string $descriptionGame, $gameData): void
     line("Hello, {$name}!");
     line($descriptionGame);
     for ($i = 0; $i < ROUND_COUNT; $i++) {
-        [$answer, $trueAnswer] = $gameData();
-        if ($answer == $trueAnswer) {
+        [$answer, $question] = $gameData();
+        line("Question: %s", $question);
+        $userAnswer = prompt('Your answer');
+        if ($userAnswer == $answer) {
             line('Correct!');
         } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$trueAnswer}'.");
+            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$answer}'.");
             line("Let's try again, {$name}!");
             return;
         }

@@ -14,13 +14,15 @@ function startGame(): void
 {
     $gameData = function()
     {
-        $random = rand(MIN_VALUE, MAX_VALUE);
-        $answer = prompt("Question: {$random}");
-        line("You answer: {$answer}");
-        $expression = $random % 2 === 0;
-        $trueAnswer = $expression ? 'yes' : 'no';
-        return [$answer, $trueAnswer];
+        $question = rand(MIN_VALUE, MAX_VALUE);
+
+        $answer = isEven($question) ? 'yes' : 'no';
+        return [$answer, $question];
     };
     run(DESCRIPTION, $gameData);
 
+}
+function isEven(int $num): bool
+{
+    return $num % 2 === 0;
 }

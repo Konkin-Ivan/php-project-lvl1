@@ -3,20 +3,16 @@
 namespace BrainGames\Games\Calc;
 
 use function BrainGames\GamesEngine\run;
-use function cli\line;
-use function cli\prompt;
 
 const DESCRIPTION = 'What is the result of the expression?';
 const MIN_VALUE = 1;
 const MAX_VALUE = 99;
 const OPERATOR_COLLECTIONS = ['+', '-', '*'];
-const OPERATOR_INDEX = 2;
 
 function startGame(): void
 {
-    function calc($expressionCollection)
+    function calculate($expressionCollection)
     {
-        $result = '';
         [$firstNum, $operator, $lastNum] = $expressionCollection;
         switch ($operator) {
             case ($operator === '+'):
@@ -28,34 +24,22 @@ function startGame(): void
             case ($operator === '*'):
                 $result = $firstNum * $lastNum;
                 break;
+            default:
+                throw new \Exception("Not found operator: $operator!");
         }
         return $result;
     }
     $gameData = function(): array
     {
-        $a = rand(MIN_VALUE, MAX_VALUE);
-        $b = rand(MIN_VALUE, MAX_VALUE);
-        $operatorIndex = rand(0, OPERATOR_INDEX);
-        $operator = OPERATOR_COLLECTIONS[$operatorIndex];
-        if ($a < $b) {
-            $firstNum = $b;
-            $lastNum = $a;
-            $expression = "{$firstNum} {$operator} {$lastNum}";
-            $expressionCollection = [$firstNum, $operator, $lastNum];
-            $trueAnswer = calc($expressionCollection);
-        } else {
-            $firstNum = $a;
-            $lastNum = $b;
-            $expression = "{$firstNum} {$operator} {$lastNum}";
-            $expressionCollection = [$firstNum, $operator, $lastNum];
-            $trueAnswer = calc($expressionCollection);
-        }
-        $question = prompt("Question: {$expression}");
-        $answer = $question;
-        line("You answer: {$answer}");
+        $firstNum = rand(MIN_VALUE, MAX_VALUE);
+        $lastNum = rand(MIN_VALUE, MAX_VALUE);
+        $operator = OPERATOR_COLLECTIONS[array_rand(OPERATOR_COLLECTIONS)];
 
+        $question = "{$firstNum} {$operator} {$lastNum}";
+        $expressionCollection = [$firstNum, $operator, $lastNum];
+        $answer = calculate($expressionCollection);
 
-        return [$answer, $trueAnswer];
+        return [$answer, $question];
     };
     run(DESCRIPTION, $gameData);
 }

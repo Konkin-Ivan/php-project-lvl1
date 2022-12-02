@@ -13,6 +13,9 @@ brain-calc:
 brain-nod:
 	./bin/brain-nod
 
+brain-progression:
+	./bin/brain-progression
+
 validate:
 	composer validate
 

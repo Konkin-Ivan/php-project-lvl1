@@ -16,13 +16,14 @@
             "src/Engine.php",
             "src/Games/Even.php",
             "src/Games/Calc.php",
-            "src/Games/Nod.php"
+            "src/Games/Nod.php",
+            "src/Games/Progression.php"
         ]
     },
     "authors": [
         {
             "name": "konkin",
-            "email": "ivan.konkin.adci@gmail.com"
+            "email": "konkin.info@gmail.com"
         }
     ],
     "bin": [

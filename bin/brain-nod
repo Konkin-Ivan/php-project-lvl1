@@ -13,4 +13,4 @@ if (file_exists($autoloadPath1)) {
 
 use function BrainGames\Games\Nod\startGame;
 
-print_r(startGame());
+startGame();

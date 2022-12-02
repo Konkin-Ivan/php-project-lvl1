@@ -14,20 +14,12 @@ function startGame(): void
     function calculate($expressionCollection)
     {
         [$firstNum, $operator, $lastNum] = $expressionCollection;
-        switch ($operator) {
-            case ($operator === '+'):
-                $result = $firstNum + $lastNum;
-                break;
-            case ($operator === '-'):
-                $result = $firstNum - $lastNum;
-                break;
-            case ($operator === '*'):
-                $result = $firstNum * $lastNum;
-                break;
-            default:
-                throw new \Exception("Not found operator: $operator!");
-        }
-        return $result;
+        return match ($operator) {
+            $operator === '+' => $firstNum + $lastNum,
+            $operator === '-' => $firstNum - $lastNum,
+            $operator === '*' => $firstNum * $lastNum,
+            default => throw new \Exception("Not found operator: $operator!"),
+        };
     }
     $gameData = function(): array
     {

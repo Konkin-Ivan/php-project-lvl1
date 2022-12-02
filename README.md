@@ -7,3 +7,5 @@
 [![asciicast](https://asciinema.org/a/gPZcwexapaCV57QyRKqDr8Olg.svg)](https://asciinema.org/a/gPZcwexapaCV57QyRKqDr8Olg)
 ## Недостающее число прогрессии
 [![asciicast](https://asciinema.org/a/QTBsn5IgtrO1C2YvjflnF5oBv.svg)](https://asciinema.org/a/QTBsn5IgtrO1C2YvjflnF5oBv)
+## Простое ли число?
+[![asciicast](https://asciinema.org/a/lCxheshTC94qBVWNw0sdtlE8z.svg)](https://asciinema.org/a/lCxheshTC94qBVWNw0sdtlE8z)

@@ -4,7 +4,6 @@ namespace BrainGames\Games\Nod;
 
 use function BrainGames\GamesEngine\run;
 
-
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 const MIN_VALUE = 1;
 const MAX_VALUE = 99;
@@ -36,5 +35,4 @@ function nod(int $a, int $b): int
                 $b -= $a;
         }
     }
-
 }

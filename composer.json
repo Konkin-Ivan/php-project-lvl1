@@ -28,6 +28,7 @@
       "bin/brain-even",
       "bin/brain-calc",
       "bin/brain-progression",
+      "bin/brain-prime",
       "bin/brain-gcd"
     ],
     "minimum-stability": "dev",

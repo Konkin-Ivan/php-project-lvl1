@@ -26,7 +26,8 @@
     "bin": [
       "bin/brain-games",
       "bin/brain-even",
-      "bin/brain-calc"
+      "bin/brain-calc",
+      "bin/brain-gcd"
     ],
     "minimum-stability": "dev",
     "require": {

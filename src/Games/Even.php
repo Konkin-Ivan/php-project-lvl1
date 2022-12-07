@@ -19,7 +19,6 @@ function startGame(): void
         return [$answer, $question];
     };
     run(DESCRIPTION, $gameData);
-
 }
 
 function isEven(int $num): bool

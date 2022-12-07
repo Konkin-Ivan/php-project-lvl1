@@ -30,7 +30,6 @@ function progression($a, $b): array
         $sum = $current + STEP_COLLECTION[$step];
         $progressCollection[] = $sum;
         $current = $sum;
-
     }
     return $progressCollection;
 }

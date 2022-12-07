@@ -23,7 +23,7 @@ function startGame(): void
 
 function nod(int $a, int $b): int
 {
-    while(true) {
+    while (true) {
         switch ($a) {
             case ($a === $b):
                 return $b;

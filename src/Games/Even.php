@@ -12,8 +12,7 @@ const MAX_VALUE = 99;
 
 function startGame(): void
 {
-    $gameData = function()
-    {
+    $gameData = function () {
         $question = rand(MIN_VALUE, MAX_VALUE);
 
         $answer = isEven($question) ? 'yes' : 'no';
@@ -22,6 +21,7 @@ function startGame(): void
     run(DESCRIPTION, $gameData);
 
 }
+
 function isEven(int $num): bool
 {
     return $num % 2 === 0;

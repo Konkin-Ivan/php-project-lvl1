@@ -30,8 +30,7 @@ function startGame(): void
         };
         return $result;
     }
-    $gameData = function(): array
-    {
+    $gameData = function () {
         $firstNum = rand(MIN_VALUE, MAX_VALUE);
         $lastNum = rand(MIN_VALUE, MAX_VALUE);
         $operator = OPERATOR_COLLECTIONS[array_rand(OPERATOR_COLLECTIONS)];

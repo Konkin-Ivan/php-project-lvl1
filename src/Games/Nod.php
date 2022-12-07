@@ -10,8 +10,7 @@ const MAX_VALUE = 99;
 
 function startGame(): void
 {
-    $gameData = function()
-    {
+    $gameData = function () {
         $a = rand(MIN_VALUE, MAX_VALUE);
         $b = rand(MIN_VALUE, MAX_VALUE);
         $answer = nod($a, $b);

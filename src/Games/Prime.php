@@ -4,15 +4,13 @@ namespace BrainGames\Games\Prime;
 
 use function BrainGames\GamesEngine\run;
 
-
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const MIN_VALUE = 1;
 const MAX_VALUE = 99;
 
 function startGame(): void
 {
-    $gameData = function()
-    {
+    $gameData = function () {
         $simpleData = simpleGenerator();
         [$state, $num] = $simpleData;
         $question = $num;
@@ -32,5 +30,4 @@ function simpleGenerator(): array
         }
     }
     return [$state, $num];
-
 }

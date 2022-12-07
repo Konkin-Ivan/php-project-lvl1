@@ -11,8 +11,7 @@ const STEP_COLLECTION = [1, 2, 3, 4, 5];
 
 function startGame(): void
 {
-    $gameData = function()
-    {
+    $gameData = function () {
         $dataResultCollection = mutatingCollection(MIN_VALUE, MAX_VALUE);
         [$stringCollection, $trueAnswer] = $dataResultCollection;
         $question = $stringCollection;

@@ -11,27 +11,27 @@ const MAX_VALUE = 99;
 function startGame(): void
 {
     $gameData = function () {
-        $a = rand(MIN_VALUE, MAX_VALUE);
-        $b = rand(MIN_VALUE, MAX_VALUE);
-        $answer = nod($a, $b);
-        $question = "{$a} {$b}";
+        $firstNum = rand(MIN_VALUE, MAX_VALUE);
+        $lastNum = rand(MIN_VALUE, MAX_VALUE);
+        $answer = nod($firstNum, $lastNum);
+        $question = "{$firstNum} {$lastNum}";
 
         return [$answer, $question];
     };
     run(DESCRIPTION, $gameData);
 }
 
-function nod(int $a, int $b): int
+function nod(int $firstNum, int $lastNum): int
 {
     while (true) {
-        switch ($a) {
-            case ($a === $b):
+        switch ($firstNum) {
+            case ($firstNum === $lastNum):
                 return $b;
-            case ($a > $b):
-                $a -= $b;
+            case ($firstNum > $lastNum):
+                $firstNum -= $lastNum;
                 break;
             default:
-                $b -= $a;
+                $lastNum -= $firstNum;
         }
     }
 }

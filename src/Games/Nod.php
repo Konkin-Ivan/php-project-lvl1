@@ -24,14 +24,12 @@ function startGame(): void
 function nod(int $firstNum, int $lastNum): int
 {
     while (true) {
-        switch ($firstNum) {
-            case ($firstNum === $lastNum):
-                return $lastNum;
-            case ($firstNum > $lastNum):
-                $firstNum -= $lastNum;
-                break;
-            default:
-                $lastNum -= $firstNum;
+        if ($firstNum === $lastNum) {
+            return $lastNum;
+        } elseif ($firstNum > $lastNum) {
+            $firstNum -= $lastNum;
+        } else {
+            $lastNum -= $firstNum;
         }
     }
 }

@@ -21,7 +21,7 @@ function startGame(): void
     run(DESCRIPTION, $gameData);
 }
 
-function progression($a, $b): array
+function progression(int $a, int $b): array
 {
     $step = array_rand(STEP_COLLECTION);
     $progressCollection = [];
@@ -34,7 +34,7 @@ function progression($a, $b): array
     return $progressCollection;
 }
 
-function mutatingCollection(): array
+function mutatingCollection(int $a, int $b): array
 {
     $collection = progression(MIN_VALUE, MAX_VALUE);
     $resultCollection = [];

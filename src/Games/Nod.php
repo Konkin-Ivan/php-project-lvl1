@@ -21,7 +21,7 @@ function startGame(): void
     run(DESCRIPTION, $gameData);
 }
 
-function nod($a, $b): int
+function nod(int $a, int $b): int
 {
     while (true) {
         switch ($a) {
